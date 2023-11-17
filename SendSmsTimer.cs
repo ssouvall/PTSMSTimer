@@ -15,7 +15,7 @@ namespace AzureFunctionsForPT
             AccountSidSetting = "TwilioAccountSid",
             AuthTokenSetting = "TwilioAuthToken"
         )]
-        public async Task Run([TimerTrigger("30-59/30 7-12,15-19 * * *")] TimerInfo myTimer, ILogger log, 
+        public async Task Run([TimerTrigger("0 */30 7-12,15-19 * * *")] TimerInfo myTimer, ILogger log, 
             [TwilioSms(AccountSidSetting = "TwilioAccountSid",AuthTokenSetting = "TwilioAuthToken")]
             IAsyncCollector<CreateMessageOptions> messageCollector)
         {
